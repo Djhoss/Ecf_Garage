@@ -1,0 +1,37 @@
+/* Navbar  */
+.nav {
+    z-index: 10;
+}
+
+.nav-img {
+    margin-top: -70px; /* Ajustez la valeur négative selon vos besoins */
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+
+/* Section 1 */
+.img-section1 {
+    width: auto;
+    height: auto;
+}
+
+.section-left {
+    margin-left : 7%;
+    padding: 10px;
+}
+
+.section-repation {
+    margin-left: 10%;
+    padding: 10px;
+}
