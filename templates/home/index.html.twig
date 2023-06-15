@@ -6,63 +6,140 @@
 
 {% block section1 %}
 	<body>
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<h2 class="display-4 border rounded-circle mx-5">Nos services</h2>
-			</div>
-		</div>
-        <br>
-        <br>
-		{# Controle technique #}
-		<div class="row">
-			<div class="col-md-4 section-repation">
-				<div class="d-flex flex-column justify-content-center align-items-start h-100">
-					<h2>Faire votre controle technique?</h2>
-					<br>
-					<ul>
-						<li>Économisez du temps en prenant rendez-vous en ligne.</li>
-						<li>Bénéficiez d'un service de qualité avec des experts certifiés.</li>
-						<li>Profitez de tarifs avantageux pour votre contrôle technique.</li>
-					</ul>
+		<section>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h2 class="display-4 border rounded-circle mx-5">Nos services</h2>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<img src="./img/Controle.jpg" alt="Image 2" class="img-section1 img-fluid">
-			</div>
-		</div>
-		{# Reparation #}
-		<div class="row">
-			<div class="col-md-4 section-repation">
-				<div class="d-flex flex-column justify-content-center align-items-start h-100">
-					<h2>Faire votre controle technique?</h2>
-					<br>
-					<ul>
-						<li>Économisez du temps en prenant rendez-vous en ligne.</li>
-						<li>Bénéficiez d'un service de qualité avec des experts certifiés.</li>
-						<li>Profitez de tarifs avantageux pour votre contrôle technique.</li>
-					</ul>
+			<br>
+			<br>
+
+			{# Controle technique #}
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6 zoom zoom-animate">
+						<img src="./img/Controle.jpg" alt="Image 1" class="img-section1 img-fluid">
+					</div>
+					<div class="col-md-4 mx-5 zoom zoom-animate">
+						<div class="d-flex flex-column justify-content-center align-items-start h-100">
+							<h2>Faire votre contrôle technique ?</h2>
+							<br>
+							<ul>
+								<li>Économisez du temps en prenant rendez-vous en ligne.</li>
+								<li>Bénéficiez d'un service de qualité avec des experts certifiés.</li>
+								<li>Profitez de tarifs avantageux pour votre contrôle technique.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				{# Reparation #}
+				<div class="row">
+					<div class="col-md-6 zoom zoom-animate">
+						<img src="./img/Reparation.jpg" alt="Image 1" class="img-section1 img-fluid">
+					</div>
+					<div class="col-md-4 mx-5 zoom zoom-animate">
+						<div class="d-flex flex-column justify-content-center align-items-start h-100">
+							<h2>Faire réparer votre véhicule?</h2>
+							<br>
+							<ul>
+								<li>Économisez du temps en prenant rendez-vous en ligne.</li>
+								<li>Bénéficiez d'un service de qualité avec des experts certifiés.</li>
+								<li>Profitez de tarifs avantageux pour votre contrôle technique.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<br>
+
+				{# Nettoyage #}
+				<div class="row">
+					<div class="col-md-6 zoom zoom-animate">
+						<img src="./img/Nettoyage.jpg" alt="Image 1" class="img-section1 img-fluid">
+					</div>
+					<div class="col-md-4 mx-5 zoom zoom-animate">
+						<div class="d-flex flex-column justify-content-center align-items-start h-100">
+							<h2>Faire nettoyager votre véhicule ?</h2>
+							<br>
+							<ul>
+								<li>Économisez du temps en prenant rendez-vous en ligne.</li>
+								<li>Bénéficiez d'un service de qualité avec des experts certifiés.</li>
+								<li>Profitez de tarifs avantageux pour votre contrôle technique.</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<img src="./img/Reparation.jpg" alt="Image 2" class="img-section1 img-fluid">
-			</div>
-		</div>
-		{# Nettoyage #}
-		<div class="row">
-			<div class="col-md-4 section-repation">
-				<div class="d-flex flex-column justify-content-center align-items-start h-100">
-					<h2>Faire votre controle technique?</h2>
-					<br>
-					<ul>
-						<li>Économisez du temps en prenant rendez-vous en ligne.</li>
-						<li>Bénéficiez d'un service de qualité avec des experts certifiés.</li>
-						<li>Profitez de tarifs avantageux pour votre contrôle technique.</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<img src="./img/Nettoyage.jpg" alt="Image 2" class="img-section1 img-fluid">
-			</div>
-		</div>
-	</body>
+		</section>
+		<br>
+{% endblock %}
+
+{% block section2 %}
+<br>
+<section>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2 class="display-4 border rounded-circle mx-5">Nos services</h2>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-4 text-center zoom zoom-animate">
+                <img src="./img/Alexia.jpg" alt="Photo de profil" class="img-tem img-fluid rounded-circle">
+                <h3 class="mb-3">Alexia</h3>
+                <p class="text-center px-3">"Je suis vraiment satisfait du service du garage. Le personnel est très professionnel et compétent. Ils ont résolu tous les problèmes de ma voiture rapidement et à un prix raisonnable. Je recommande vivement ce garage !"</p>
+            </div>
+            <div class="col-md-4 text-center zoom zoom-animate">
+                <img src="./img/John.jpg" alt="Photo de profil" class="img-tem img-fluid rounded-circle ml-md-5">
+                <h3 class="mb-3">John</h3>
+                <p class="text-center px-3">"J'ai été agréablement surpris par la qualité du service offert par ce garage. Ils ont été très attentionnés et ont résolu le problème de ma voiture rapidement. De plus, les tarifs sont très compétitifs. Je recommande sans hésitation !"</p>
+            </div>
+            <div class="col-md-4 text-center zoom zoom-animate">
+                <img src="./img/Sophie.jpg" alt="Photo de profil" class="img-tem img-fluid rounded-circle ml-md-5">
+                <h3 class="mb-3">Sophie</h3>
+                <p class="text-center px-3">"Je suis très satisfaite des services de ce garage. Le personnel est amical, les réparations ont été effectuées rapidement et le prix était raisonnable. Je recommande ce garage à tous ceux qui recherchent un service de qualité et fiable."</p>
+            </div>
+        </div>
+    </div>
+	<br>
+	<br>
+	<br>
+	<br>
+</section>
+
+
+{% endblock %}
+
+{% block section3 %}
+<br>
+<br>
+<br>
+<section class"section-3">
+    <div class="container section-3">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="display-4">Nous contacter</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-container">
+                    <form>
+                        {{ form(form) }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+
+{% endblock %}
+
+{% block footer %}
+
+
 {% endblock %}
