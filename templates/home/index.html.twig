@@ -7,6 +7,7 @@
 {% block section1 %}
 	<body>
 		<section>
+
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<h2 class="display-4 border rounded-circle mx-5">Nos services</h2>
@@ -25,31 +26,36 @@
 						<div class="d-flex flex-column justify-content-center align-items-start h-100">
 							<h2>Faire votre contrôle technique ?</h2>
 							<br>
-							<ul>
-								<li>Économisez du temps en prenant rendez-vous en ligne.</li>
-								<li>Bénéficiez d'un service de qualité avec des experts certifiés.</li>
-								<li>Profitez de tarifs avantageux pour votre contrôle technique.</li>
-							</ul>
+							{% for service in service %}
+                            	{% if service.type == 'Controle' %}
+                            		<ul>
+                            			<li>{{ service.service }}</li>
+                            		</ul>
+                            	{% endif %}
+							{% endfor %}
 						</div>
 					</div>
 				</div>
 				{# Reparation #}
-				<div class="row">
-					<div class="col-md-6 zoom zoom-animate">
-						<img src="./img/Reparation.jpg" alt="Image 1" class="img-section1 img-fluid">
-					</div>
-					<div class="col-md-4 mx-5 zoom zoom-animate">
-						<div class="d-flex flex-column justify-content-center align-items-start h-100">
-							<h2>Faire réparer votre véhicule?</h2>
-							<br>
-							<ul>
-								<li>Économisez du temps en prenant rendez-vous en ligne.</li>
-								<li>Bénéficiez d'un service de qualité avec des experts certifiés.</li>
-								<li>Profitez de tarifs avantageux pour votre contrôle technique.</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+                <div class="row">
+                	<div class="col-md-6 zoom zoom-animate">
+                		<img src="./img/Reparation.jpg" alt="Image 1" class="img-section1 img-fluid">
+                	</div>
+                	<div class="col-md-4 mx-5 zoom zoom-animate">
+                		<div class="d-flex flex-column justify-content-center align-items-start h-100">
+                			<h2>Faire réparer votre véhicule?</h2>
+                			<br>
+                			{% for service in service %}
+                				{% if service.type == 'Réparation' %}
+                					<ul>
+                						<li>{{ service.service }}</li>
+                					</ul>
+                				{% endif %}
+                			{% endfor %}
+                		</div>
+                	</div>
+                </div>
+
 				<br>
 
 				{# Nettoyage #}
@@ -61,15 +67,18 @@
 						<div class="d-flex flex-column justify-content-center align-items-start h-100">
 							<h2>Faire nettoyager votre véhicule ?</h2>
 							<br>
-							<ul>
-								<li>Économisez du temps en prenant rendez-vous en ligne.</li>
-								<li>Bénéficiez d'un service de qualité avec des experts certifiés.</li>
-								<li>Profitez de tarifs avantageux pour votre contrôle technique.</li>
-							</ul>
+							{% for service in service %}
+                            	{% if service.type == 'Nettoyage' %}
+                            		<ul>
+                            			<li>{{ service.service }}</li>
+                            		</ul>
+                            	{% endif %}
+							{% endfor %}
 						</div>
 					</div>
 				</div>
 			</div>
+
 		</section>
 		<br>
 {% endblock %}
@@ -79,7 +88,7 @@
 <section>
     <div class="row">
         <div class="col-md-12 text-center">
-            <h2 class="display-4 border rounded-circle mx-5">Nos services</h2>
+            <h2 class="display-4 border rounded-circle mx-5">Nos témoignages</h2>
         </div>
     </div>
     <br>
@@ -126,9 +135,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="form-container">
-                    <form>
                         {{ form(form) }}
-                    </form>
                 </div>
             </div>
         </div>

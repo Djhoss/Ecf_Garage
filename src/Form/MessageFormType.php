@@ -16,30 +16,43 @@ class MessageFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('firstname', TextType::class, [
-                'label' => 'Prénom',
-                'attr' => ['class' => 'form-control'],
-            ])
-            ->add('lastname', TextType::class, [
-                'label' => 'Nom',
-                'attr' => ['class' => 'form-control'],
-            ])
-            ->add('email', EmailType::class, [
-                'label' => 'Email',
-                'attr' => ['class' => 'form-control'],
-            ])
-            ->add('number', TextType::class, [
-                'label' => 'Numéro',
-                'attr' => ['class' => 'form-control'],
-            ])
-            ->add('message', TextareaType::class, [
-                'label' => 'Message',
-                'attr' => ['class' => 'form-control', 'rows' => 4],
-            ])
-            ->add('submit', SubmitType::class, [
-                'label' => 'Envoyer',
-                'attr' => ['class' => 'btn btn-primary'],
-            ]);
+        ->add('firstname', TextType::class, [
+            'label' => 'Prénom',
+            'attr' => [
+                'placeholder' => 'Votre prénom'
+            ]
+        ])
+        ->add('lastname', TextType::class, [
+            'label' => 'Nom',
+            'attr' => [
+                'placeholder' => 'Votre nom'
+            ]
+        ])
+        ->add('email', EmailType::class, [
+            'label' => 'Email',
+            'attr' => [
+                'placeholder' => 'Votre email'
+            ]
+        ])
+        ->add('number', TextType::class, [
+            'label' => 'Numéro de téléphone',
+            'attr' => [
+                'placeholder' => 'Votre numéro de téléphone'
+            ]
+        ])
+        ->add('message', TextareaType::class, [
+            'label' => 'Message',
+            'attr' => [
+                'placeholder' => 'Votre message'
+            ]
+        ])
+        ->add('submit', SubmitType::class, [
+            'label' => 'Envoyer',
+            'attr' => [
+                'class' => 'btn btn-primary'
+            ]
+        ])
+        ;
 
 
     }

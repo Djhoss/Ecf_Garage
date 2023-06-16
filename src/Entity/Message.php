@@ -14,6 +14,8 @@ class Message
     #[ORM\Column]
     private ?int $id = null;
 
+
+
     #[ORM\Column(length: 30)]
     private ?string $firstname = null;
 
@@ -28,6 +30,7 @@ class Message
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message = null;
+
 
     public function getId(): ?int
     {
