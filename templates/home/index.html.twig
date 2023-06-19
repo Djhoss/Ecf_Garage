@@ -10,7 +10,7 @@
 
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<h2 class="display-4 border rounded-circle mx-5">Nos services</h2>
+					<h2 class="display-4 border-bottom mx-5">Nos services</h2>
 				</div>
 			</div>
 			<br>
@@ -19,7 +19,7 @@
 			{# Controle technique #}
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-6 zoom zoom-animate">
+					<div class="col-md-6">
 						<img src="./img/Controle.jpg" alt="Image 1" class="img-section1 img-fluid">
 					</div>
 					<div class="col-md-4 mx-5 zoom zoom-animate">
@@ -38,7 +38,7 @@
 				</div>
 				{# Reparation #}
                 <div class="row">
-                	<div class="col-md-6 zoom zoom-animate">
+                	<div class="col-md-6">
                 		<img src="./img/Reparation.jpg" alt="Image 1" class="img-section1 img-fluid">
                 	</div>
                 	<div class="col-md-4 mx-5 zoom zoom-animate">
@@ -60,7 +60,7 @@
 
 				{# Nettoyage #}
 				<div class="row">
-					<div class="col-md-6 zoom zoom-animate">
+					<div class="col-md-6">
 						<img src="./img/Nettoyage.jpg" alt="Image 1" class="img-section1 img-fluid">
 					</div>
 					<div class="col-md-4 mx-5 zoom zoom-animate">
@@ -86,37 +86,51 @@
 {% block section2 %}
 <br>
 <section>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h2 class="display-4 border rounded-circle mx-5">Nos témoignages</h2>
-        </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2 class="display-4 border-bottom mx-5">Nos témoignages</h2>
     </div>
-    <br>
-    <br>
-    <div class="container-fluid">
-        <div class="row justify-content-center align-items-center">
+  </div>
+  <br>
+  <br>
+  <div class="container-fluid">
+    <div class="testimonial-carousel">
+      <div class="row justify-content-center align-items-center">
+        {% for temoignage in temoignage %}
+          {% if temoignage.status|slice(0,6) == '1' %}
             <div class="col-md-4 text-center zoom zoom-animate">
-                <img src="./img/Alexia.jpg" alt="Photo de profil" class="img-tem img-fluid rounded-circle">
-                <h3 class="mb-3">Alexia</h3>
-                <p class="text-center px-3">"Je suis vraiment satisfait du service du garage. Le personnel est très professionnel et compétent. Ils ont résolu tous les problèmes de ma voiture rapidement et à un prix raisonnable. Je recommande vivement ce garage !"</p>
+              <img src="{{ temoignage.image }}" alt="Photo de profil" class="img-tem img-fluid rounded-circle">
+              <h3 class="mb-3">{{ temoignage.name }}</h3>
+              <p class="text-center px-3">{{ temoignage.temoignage }}</p>
+			  <br>
             </div>
-            <div class="col-md-4 text-center zoom zoom-animate">
-                <img src="./img/John.jpg" alt="Photo de profil" class="img-tem img-fluid rounded-circle ml-md-5">
-                <h3 class="mb-3">John</h3>
-                <p class="text-center px-3">"J'ai été agréablement surpris par la qualité du service offert par ce garage. Ils ont été très attentionnés et ont résolu le problème de ma voiture rapidement. De plus, les tarifs sont très compétitifs. Je recommande sans hésitation !"</p>
-            </div>
-            <div class="col-md-4 text-center zoom zoom-animate">
-                <img src="./img/Sophie.jpg" alt="Photo de profil" class="img-tem img-fluid rounded-circle ml-md-5">
-                <h3 class="mb-3">Sophie</h3>
-                <p class="text-center px-3">"Je suis très satisfaite des services de ce garage. Le personnel est amical, les réparations ont été effectuées rapidement et le prix était raisonnable. Je recommande ce garage à tous ceux qui recherchent un service de qualité et fiable."</p>
-            </div>
-        </div>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
-	<br>
-	<br>
-	<br>
-	<br>
+  </div>
+
+  <br>
+  <br>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h3 class="text-center mb-4">Vous souhaitais nous laisser un avis ?</h3>
+        {{ form(formTemoignage) }}
+      </div>
+    </div>
+   </div>
+  
+  <br>
+  <br>
 </section>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+
 
 
 {% endblock %}
@@ -135,7 +149,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="form-container">
-                        {{ form(form) }}
+                        {{ form(formContact) }}
                 </div>
             </div>
         </div>

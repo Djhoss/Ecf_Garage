@@ -12,3 +12,8 @@ testimonials.forEach(testimonial => {
         testimonial.classList.remove('active');
     });
 });
+
+
+  
+  
+  
