@@ -35,7 +35,7 @@ class HomeController extends AbstractController
         // Temoignage
 
         $temoignage = $this->entityManager->getRepository(Temoignage::class)->findAll();
-        $showTemoignageForm = false;
+
 
     // Form Temoignage
         $newTemoignage = new Temoignage();
@@ -70,7 +70,6 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'service' => $service,
             'temoignage' => $temoignage,
-            'showTemoignageForm' => $showTemoignageForm,
             'formTemoignage' => $formTemoignage->createView(),
             'formContact' => $formContact->createView(),
         ]);

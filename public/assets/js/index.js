@@ -13,6 +13,20 @@ testimonials.forEach(testimonial => {
     });
 });
 
+// fLECHE RETOUR HAUT DE PAGE
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 200) {
+        document.getElementById('back-to-top').style.display = 'block';
+    } else {
+        document.getElementById('back-to-top').style.display = 'none';
+    }
+});
+
+document.getElementById('back-to-top').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
   
   

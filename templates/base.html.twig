@@ -12,7 +12,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-white nav">
 			<div class="container">
 				  <!-- Logo à gauche -->
-				  <a class="navbar-brand" href="#">
+				  <a class="navbar-brand" href="app_home">
 				  	<img src="./img/logo.png" alt="Logo" width="100px" height="100px">
 				  </a>
 				  <!-- Bouton de menu responsive -->
@@ -23,14 +23,19 @@
 					<ul class="navbar-nav mx-auto">
 						<!-- Liens pour les services, les témoignages et le contact au centre -->
 						<li class="nav-item">
-							<a class="nav-link" href="#">Services</a>
+							<a class="nav-link" href="#services">Services</a>
 						</li>
 						<li class="nav-item px-5">
-							<a class="nav-link" href="#">Témoignages</a>
+							<a class="nav-link" href="#temoignages">Témoignages</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Contact</a>
+							<a class="nav-link" href="#contact">Contact</a>
 						</li>
+            {% if app.user %}
+                <li class="nav-item px-5">
+                    <a class="nav-link text-warning" href="{{ path('admin') }}">Admin</a>
+                </li>
+            {% endif %}
 					</ul>
 					<ul class="navbar-nav ml-auto">
 						<!-- Lien pour les ventes à droite -->
@@ -46,6 +51,10 @@
 			<img src="./img/nav.jpg" alt="Image" class="nav-img img-fluid">
 		</div>
 	</header>
+
+  {% block login %}{% endblock %}
+
+  {% block register %}{% endblock %}
 
 	{% block section2 %}
 	
@@ -65,7 +74,7 @@
 
 	{% endblock %}
 	
-    <footer>
+  <footer>
   <div class="container">
   <br>
     <div class="row">
@@ -113,13 +122,41 @@
           <p class="text-center">Email: Blabla@gmail.com</p>
         </div>
         <div class="col-md-4 text-end">
-          <h4>Employé</h4>
-          <a href="lien_vers_page_connexion" class="btn btn-primary">Connexion</a>
+          {% if app.user %}
+              <div class="text-center mb-3">
+                  <h3>Déconnexion</h3>
+                  <a href="{{ path('app_logout') }}" class="btn btn-danger">Logout</a>
+              </div>
+          {% else %}
+              <div class="text-center mb-3">
+                  <h3>Employee Login</h3>
+                  <a href="{{ path('app_login') }}" class="btn btn-primary">Login</a>
+              </div>
+          {% endif %}
         </div>
+        <br>
+        <hr>
+        <br>
+        {% if app.user %}
+            <div class="text-center mb-3">
+                <h3>Page Administrateur</h4>
+                <a href="{{ path('admin') }}" class="btn btn-secondary">Accés Admin</a>
+            </div>
+        {% endif %}
+        
     </div>
   </div>
   <br>
+  <div class="container-fluid">
+            <!-- ... Votre contenu existant ... -->
+            
+            <div class="text-center mt-5 p-3 bg-dark text-white">
+                <p>Edit by Vover</p>
+                <p>&copy; 2023 Vover. All rights reserved.</p>
+            </div>
+        </div>
 </footer>
+
 </body>
 
 	
