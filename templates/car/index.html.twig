@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block car %}
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    {% for car in car %}
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <a href="{{ path('car', {'slug': car.slug }) }}">
+            <img class="card-img-top" src="{{ asset('uploads/' ~ car.image) }}" alt="Card image cap" style="height: 300px; object-fit: cover;">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ car.Name }}</h5>
+            <p class="card-text">
+              Année : {{ car.Year }}<br>
+              Énergie : {{ car.energy }}<br>
+              Type : {{ car.type }}<br>
+              Kilométrage : {{ car.Km }} km<br>
+              Prix : {{ car.Prices / 100 }} €<br>
+            </p>
+          </div>
+          <hr>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

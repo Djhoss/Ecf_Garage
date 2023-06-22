@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Message;
 use App\Entity\Service;
 use App\Entity\Temoignage;
+use App\Entity\Horaire;
 use App\Form\TemoignageType;
 use App\Form\MessageFormType;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,6 +32,10 @@ class HomeController extends AbstractController
         // Service
 
         $service = $this->entityManager->getRepository(Service::class)->findAll();
+
+        // Horaire 
+
+        $horaire = $this->entityManager->getRepository(Horaire::class)->findAll();
 
         // Temoignage
 
@@ -64,11 +69,10 @@ class HomeController extends AbstractController
             $this->addFlash('success', 'Votre message a bien été envoyé');
             return $this->redirectToRoute('app_home');
         }
-    
         
-
         return $this->render('home/index.html.twig', [
             'service' => $service,
+            'horaire' => $horaire,
             'temoignage' => $temoignage,
             'formTemoignage' => $formTemoignage->createView(),
             'formContact' => $formContact->createView(),

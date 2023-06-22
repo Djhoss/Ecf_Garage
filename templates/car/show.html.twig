@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ car.Name }} {% endblock %}
+
+{% block showCar %}
+<hr>
+<br>
+<br>
+<br>
+<div class="container py-5 vb">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <img src="{{ asset('uploads/' ~ car.image) }}" alt="{{ car.Name }}" class="img-fluid" style="max-height: 400px; border-radius: 5%;">
+        <div class="card-img-overlay">
+          <div class="overlay-text">{{ car.Name }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title text-center">Informations sur la voiture</h5>
+          <ul class="list-unstyled text-center">
+            <li><strong>Année:</strong> {{ car.Year }}</li>
+            <li><strong>Énergie:</strong> {{ car.energy }}</li>
+            <li><strong>Type:</strong> {{ car.type }}</li>
+            <li><strong>Kilométrage:</strong> {{ car.Km }} km</li>
+            <li><strong>Prix:</strong> {{ car.Prices / 100 }} €</li>
+          </ul>
+          <ul>
+            <li class="list-unstyled text-center"><strong>Accessoires:</strong>
+              {% for accessory in car.accesory %}<br>
+                {{ accessory }}{% if not loop.last %}, {% endif %}
+              {% endfor %}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<hr>
+
+
+<style>
+
+
+.overlay-text {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+
+</style>
+
+{% endblock %}

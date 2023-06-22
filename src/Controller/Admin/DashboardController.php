@@ -11,6 +11,8 @@ use App\Entity\Message;
 use App\Entity\Service;
 use App\Entity\Temoignage;
 use App\Entity\User;
+use App\Entity\Horaire;
+use App\Entity\Car;
 use App\Controller\Admin\MessageCrudController;
 use App\Form\MessageFormType;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -39,6 +41,8 @@ class DashboardController extends AbstractDashboardController
         // 
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Les utilisateurs', 'fas fa-list', User::class, ['role' => 'ROLE_ADMIN']) ;
+        yield MenuItem::linkToCrud('Les horaires', 'fas fa-list', Horaire::class);
+        yield MenuItem::linkToCrud('Les voitures', 'fas fa-list', Car::class);
         yield MenuItem::linkToCrud('Message page d\'accueil', 'fas fa-list', Message::class);
         yield MenuItem::linkToCrud('Les Services', 'fas fa-list', Service::class);
         yield MenuItem::linkToCrud('Les Témoignages', 'fas fa-list', Temoignage::class);
