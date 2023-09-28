@@ -45,7 +45,7 @@ Accédez au fichier de configuration config/packages/security.yaml.
 
 Commentez la ligne (ligne 37) :
 - { path: ^/admin, roles: ROLE_ADMIN } -> //- { path: ^/admin, roles: ROLE_ADMIN }
-Dans votre navigateur, saisissez l'URL suivante : http://localhost:8000/admin Cela vous redirigera vers l'interface administrateur, mais sans un profil administrateur actif.
+- Dans votre navigateur, saisissez l'URL suivante : http://localhost:8000/admin Cela vous redirigera vers l'interface administrateur, mais sans un profil administrateur actif.
 
 Cliquez sur le menu "Ajouter un employé", remplissez le formulaire avec votre email et votre mot de passe, puis validez. Cela créera votre premier utilisateur.
 
