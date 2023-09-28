@@ -54,8 +54,8 @@ Retournez à http://localhost:8000/admin, puis accédez à la section "Les utili
 Une fois ces étapes réalisées, retournez au fichier de configuration config/packages/security.yaml.
 
 Décommentez la ligne que vous aviez précédemment commentée (ligne 37) : 
-//- { path: ^/admin, roles: ROLE_ADMIN } -> - { path: ^/admin, roles: ROLE_ADMIN }
-Vous pouvez désormais vous connecter à votre compte en utilisant le bouton "Login" situé dans le footer. Une fois connecté, essayez d'accéder à votre espace administrateur via http://localhost:8000/admin
+- //- { path: ^/admin, roles: ROLE_ADMIN } -> - { path: ^/admin, roles: ROLE_ADMIN }
+- Vous pouvez désormais vous connecter à votre compte en utilisant le bouton "Login" situé dans le footer. Une fois connecté, essayez d'accéder à votre espace administrateur via http://localhost:8000/admin
 
 Utilisation : 
 Lancer le serveur de développement Symfony
