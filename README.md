@@ -39,12 +39,15 @@ $ symfony console app:promote-admin votre-email@example.com
 
 Note : Si la création d'un administrateur ou d'un utilisateur ne fonctionne pas, suivez les étapes ci-dessous :
 
+-------------
+
 Création manuelle d'un utilisateur administrateur :
 
 Accédez au fichier de configuration config/packages/security.yaml.
 
 Commentez la ligne (ligne 37) :
 - { path: ^/admin, roles: ROLE_ADMIN } -> //- { path: ^/admin, roles: ROLE_ADMIN }
+- Lancer le serveur de développement Symfony -> $ symfony server:start
 - Dans votre navigateur, saisissez l'URL suivante : http://localhost:8000/admin Cela vous redirigera vers l'interface administrateur, mais sans un profil administrateur actif.
 
 Cliquez sur le menu "Ajouter un employé", remplissez le formulaire avec votre email et votre mot de passe, puis validez. Cela créera votre premier utilisateur.
@@ -56,6 +59,8 @@ Une fois ces étapes réalisées, retournez au fichier de configuration config/p
 Décommentez la ligne que vous aviez précédemment commentée (ligne 37) : 
 - //- { path: ^/admin, roles: ROLE_ADMIN } -> - { path: ^/admin, roles: ROLE_ADMIN }
 - Vous pouvez désormais vous connecter à votre compte en utilisant le bouton "Login" situé dans le footer. Une fois connecté, essayez d'accéder à votre espace administrateur via http://localhost:8000/admin
+
+---------------------
 
 Utilisation : 
 Lancer le serveur de développement Symfony
